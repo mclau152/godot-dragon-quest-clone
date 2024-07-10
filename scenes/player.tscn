@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba0j2c6fm3uhe"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_8isqb"]
+[ext_resource type="Texture2D" uid="uid://bdpjf3vhup2bu" path="res://assets/erdrick.png" id="1_s1f1d"]
+[ext_resource type="Texture2D" uid="uid://d3lcnode5rwvw" path="res://assets/knight-front-2.png" id="2_nipe7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvyig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s1f1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nipe7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnkkr"]
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_8isqb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yvyig")
+autoplay = "default"
+frame = 1
+frame_progress = 0.900816
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_xnkkr")

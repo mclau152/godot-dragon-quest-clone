@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0jnvx5xk05p6"]
+
+[ext_resource type="Script" path="res://scenes/castle.gd" id="1_7xalf"]
+[ext_resource type="Texture2D" uid="uid://c8lc0m41fkyb" path="res://assets/DW_WorldTiles.png" id="1_re05t"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8osfk"]
+texture = ExtResource("1_re05t")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kpgcg"]
+sources/0 = SubResource("TileSetAtlasSource_8osfk")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vharl"]
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_7xalf")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_kpgcg")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 393216, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_vharl")
